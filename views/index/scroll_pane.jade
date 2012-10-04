@@ -1,0 +1,30 @@
+extends ../layout
+
+
+
+block content
+
+  link(href="/css/jquery.jscrollpane.css")
+  script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
+  //script(src="/js/jquery.min.js")
+  script(src="/js/jquery.mousewheel.js")
+  script(src="/js/jquery.jscrollpane.min.js")
+
+  script
+    $(function(){
+      $('.scroll-pane').jScrollPane();
+    });
+
+  h1= title
+
+  div.scroll.scroll-pane
+    div.scrollInner scrollContent
+        br
+        br
+        br
+        p test
+        br
+        p test
+        hr
+        p test
+

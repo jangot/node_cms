@@ -1,0 +1,33 @@
+extends ../layout
+
+
+
+block content
+
+  link(rel='stylesheet', href='/css/jquery.mCustomScrollbar.css')
+
+  script(src='/js/jquery.min.js')
+  script !window.jQuery && document.write(unescape('%3Cscript src="jquery/jquery-1.7.2.min.js"%3E%3C/script%3E'))
+
+
+  script(src='/js/jquery-ui-1.8.21.custom.min.js')
+  script !window.jQuery.ui && document.write(unescape('%3Cscript src="jquery/jquery-ui-1.8.21.custom.min.js"%3E%3C/script%3E'))
+
+  script(src='/js/jquery.mousewheel.min.js')
+  script(src='/js/jquery.mCustomScrollbar.js')
+
+  script(src='/js/m_custome_scrollbar.js')
+
+  h1= title
+
+  div.scroll.content
+    div.scrollInner scrollContent
+        br
+        br
+        br
+        p test
+        br
+        p test
+        hr
+        p test
+

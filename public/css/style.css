@@ -1,0 +1,20 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.scroll {
+    width : 200px;
+    height: 500px;
+    border: 1px #8b008b solid;
+}
+
+.scrollInner {
+    height : 1000px;
+    background: -webkit-linear-gradient(top left, #fefcea, #f1da36);
+    background: linear-gradient(top left, #fefcea, #f1da36);
+}
