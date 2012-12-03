@@ -24,7 +24,7 @@ module.exports = inherit({
                 callback(false);
                 return;
             }
-            callback(Boolean(result));
+            callback(Boolean(result.length));
         });
     }
 

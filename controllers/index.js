@@ -7,15 +7,29 @@ module.exports = inherit(abstractController, {
 
     indexAction : function() {
         var view = this._getView();
-        view.title = 'Express';
-        view.content = this._getParam('content');
+//        view.title = JSON.stringify();
 
+        view.title = 'test';
+        var params = this._getParams();
 
         var user = new User();
-        user.auth('jangot', '111', function(result) {
-            console.log(111, result);
-        });
+        user.auth(params.login, params.pass, function(result) {
+            if (result) {
+                this._result.redirect('/index/test');
+            } else {
+                view.content = 'Ошибка авторизации!';
+                this.render();
+            }
+        }.bind(this));
 
+    },
+
+    testAction : function() {
+        var view = this._getView();
+        view.title = 'Test Action';
+        view.content = 'Авторизация прошла успешно!!!';
+
+        this.render();
     }
 
 //    testAction : function() {
