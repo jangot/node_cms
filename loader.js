@@ -37,21 +37,21 @@ module.exports = inherit({
         var app = this._appliaction;
 
         app.configure(function(){
-            try {
-                app.use(express.cookieDecoder());
-                app.use(express.session());
-            } catch (e) {
-                console.log(e);
-            }
-
-
-            app.set('port', self._port);
-            app.set('views', self._viewFolder);
-            app.set('view engine', 'jade');
             app.use(express.favicon());
             app.use(express.logger('dev'));
             app.use(express.bodyParser());
             app.use(express.methodOverride());
+
+
+            app.use(express.cookieParser());
+            app.use(express.session({ secret: "keyboard cat" }));
+
+            app.set('port', self._port);
+            app.set('views', self._viewFolder);
+            app.set('view engine', 'jade');
+
+
+
 
             app.use(express.static(path.join(__dirname, 'public')));
 

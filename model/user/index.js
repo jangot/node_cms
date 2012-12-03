@@ -5,8 +5,14 @@ var db = require(global.LIB_PATH + '/db');
 
 module.exports = inherit({
 
+    _id : null,
+
     __constructor : function() {
 
+    },
+
+    isAuth : function() {
+        return this._auth;
     },
 
     auth : function(login, password, callback) {
@@ -24,8 +30,18 @@ module.exports = inherit({
                 callback(false);
                 return;
             }
-            callback(Boolean(result.length));
-        });
+
+            var ok = Boolean(result.length);
+            if (ok) {
+                this._id = result[0].id;
+            }
+
+            callback(result);
+        }.bind(this));
+    },
+
+    getId : function() {
+        return this._id;
     }
 
 
